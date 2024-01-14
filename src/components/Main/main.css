@@ -1,0 +1,119 @@
+.background {
+  background: url("../../img/bg.png") no-repeat;
+  background-size: 100%;
+  position: relative;
+}
+.bg__products {
+  position: relative;
+  margin-left: 60px;
+}
+.bg__container {
+  display: flex;
+  align-items: center;
+}
+h1 {
+  font-weight: 700 !important;
+  font-size: 48px !important;
+  line-height: 150% !important;
+  color: #414141 !important;
+}
+
+.hero__card {
+  display: flex;
+  background: #fcd5ba;
+  box-shadow: 0px 8px 16px rgba(202, 147, 96, 0.5);
+  border-radius: 4px;
+  padding: 8px 30px;
+}
+.hero__card > p {
+  font-size: 16px;
+}
+.hero__card > div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+  max-width: 203px;
+}
+.hero__cards {
+  margin-top: 40px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.hero__card-red {
+  width: 100%;
+  max-width: 573px;
+  background: #e5ffde;
+  border-radius: 4px;
+  box-shadow: 0px 8px 16px #e5ffde;
+}
+.hero__card-red > div {
+  width: 100%;
+  max-width: 260px;
+}
+.hero {
+  margin-top: 120px;
+}
+
+.shop {
+  margin-top: 120px;
+}
+.yandex-map {
+  margin-top: 40px;
+}
+
+.articles {
+  margin-top: 120px;
+}
+.articles__content {
+  margin-top: 40px;
+  display: flex;
+  justify-content: space-between;
+}
+.article__card {
+  max-width: 380px;
+  background: #ffffff;
+  box-shadow: 1px 2px 4px rgba(0, 0, 0, 0.1);
+  border-radius: 4px;
+}
+.article__card > img {
+  width: 100%;
+  border-top-left-radius: 4px;
+  border-top-right-radius: 4px;
+}
+.article__text {
+  padding: 10px;
+}
+.article__text * {
+  margin-top: 10px;
+}
+.article__info {
+  font-size: 16px;
+}
+
+.header__search {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px;
+  border: 1px solid #70c05b;
+  border-radius: 4px;
+}
+.header__search > input {
+  width: 374px;
+  border: none;
+}
+.header__search > input:focus {
+  outline: none;
+}
+
+.add {
+  margin-top: 80px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.add > h4 {
+  cursor: pointer;
+}
