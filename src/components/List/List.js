@@ -43,11 +43,13 @@ const List = () => {
           marginTop: "20px",
           flexDirection: "column",
         }}
-        className="container container-parent">
+        className="container container-parent"
+      >
         <p
           style={{
             fontSize: "18px",
-          }}>
+          }}
+        >
           По цене:
         </p>
         <div className="slider__parent">
@@ -59,29 +61,30 @@ const List = () => {
               alignItems: "center",
               justifyContent: "space-between",
               margin: "10px 0 20px 0",
-            }}>
+            }}
+          >
             <p>0</p>
             <Slider
               className="slider"
               style={{
                 width: "500px",
-                color: "#70c05b",
+                color: "gray",
               }}
               value={price}
-              onChange={e => {
+              onChange={(e) => {
                 setPrice(e.target.value);
               }}
               valueLabelDisplay="auto"
               min={0}
-              max={1000}
+              max={5000}
               step={1}
             />
-            <p>1000</p>
+            <p>5000</p>
           </div>
         </div>
       </div>
       <div className="products__cards container">
-        {products.map(item => (
+        {products.map((item) => (
           <ProductCard
             key={item.id}
             item={item}

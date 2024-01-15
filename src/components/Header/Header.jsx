@@ -27,11 +27,12 @@ const Header = () => {
     <header className="header">
       <div className="container">
         <div className="header__content">
-          <img onClick={() => navigate("/")} src={Logo} alt="logo" />
+          {/* <img onClick={() => navigate("/")} src={Logo} alt="logo" /> */}
+          <h3 onClick={() => navigate("/")}>GAME STORE</h3>
           <div className="header__search">
             <input
               value={search}
-              onChange={e => setSearch(e.target.value)}
+              onChange={(e) => setSearch(e.target.value)}
               type="text"
               placeholder="Найти товар"
             />
@@ -47,9 +48,14 @@ const Header = () => {
                 padding: "0 0 5px 25px",
               }}
               badgeContent={count}
-              color="error"></Badge>
+              color="error"
+            ></Badge>
             <img src={Cart} alt="cart" />
             <p>Корзина</p>
+          </div>{" "}
+          <div className="header__download">
+            {" "}
+            <button>Загрузить</button>
           </div>
           <div className="header__avatar">
             <LoginButton />
@@ -57,7 +63,7 @@ const Header = () => {
             <Profile />
             {/* <img src={Avatar} alt="avatar" />
             <p>Alex</p> */}
-          </div>
+          </div>{" "}
         </div>
       </div>
     </header>
