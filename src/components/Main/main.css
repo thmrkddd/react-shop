@@ -1,13 +1,15 @@
 .background {
-  background: url("../../img/bg.png") no-repeat;
+  background-repeat: no-repeat;
   background-size: 100%;
   position: relative;
 }
 .bg__products {
+  width: 120%;
   position: relative;
-  margin-left: 60px;
+  margin-left: -9%;
 }
 .bg__container {
+  width: 100%;
   display: flex;
   align-items: center;
 }
@@ -20,8 +22,7 @@ h1 {
 
 .hero__card {
   display: flex;
-  background: #fcd5ba;
-  box-shadow: 0px 8px 16px rgba(202, 147, 96, 0.5);
+  background: #bcbab8;
   border-radius: 4px;
   padding: 8px 30px;
 }
@@ -34,6 +35,9 @@ h1 {
   justify-content: center;
   width: 100%;
   max-width: 203px;
+}
+.hero__card > img {
+  width: 200px;
 }
 .hero__cards {
   margin-top: 40px;
@@ -97,7 +101,7 @@ h1 {
   align-items: center;
   justify-content: center;
   padding: 8px;
-  border: 1px solid #70c05b;
+  border: 1px solid gray;
   border-radius: 4px;
 }
 .header__search > input {

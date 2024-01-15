@@ -1,13 +1,15 @@
 .footer {
   margin-top: 80px;
-  background: url("../../img/bg-footer.png");
   padding: 24px 0;
-  background-color: rgba(249, 244, 226, 1);
+  background-color: white;
 }
 .footer__text {
   width: 100%;
   display: flex;
   justify-content: space-around;
+}
+.footer__text > p {
+  cursor: pointer;
 }
 .footer__content {
   display: flex;
@@ -33,7 +35,7 @@
   align-items: center;
 }
 .footer__right-phone > img {
-  margin-right: 10px;
+  width: 20px;
 }
 .footer__left > p {
   cursor: pointer;

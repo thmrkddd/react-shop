@@ -1,12 +1,11 @@
 import React from "react";
 
 import "./footer.css";
-import Logo from "../../img/logo-footer.svg";
 import Inst from "../../img/inst.svg";
 import Vk from "../../img/vk.svg";
 import Fb from "../../img/facebook.svg";
 import Ok from "../../img/ok.svg";
-import Tel from "../../img/phone.svg";
+import mail from "../../img/free-icon-mail-4338894.png";
 import { useNavigate } from "react-router-dom";
 
 const Footer = () => {
@@ -18,11 +17,11 @@ const Footer = () => {
         <div className="container">
           <div className="footer__content">
             <div className="footer__left">
-              <img src={Logo} alt="logo" />
+              <h3>GAME STORE</h3>
               <div className="footer__text">
                 <p onClick={() => navigate("/about")}>О компании</p>
                 <p onClick={() => navigate("/contacts")}>Контакты</p>
-                <p>Вакансии</p>
+                <p onClick={() => navigate("/vakansi")}>Вакансии</p>
                 <p onClick={() => navigate("/testi")}>Отзывы</p>
               </div>
             </div>
@@ -39,9 +38,10 @@ const Footer = () => {
               <a href="#">
                 <img src={Ok} alt="ok" />
               </a>
-              <a className="footer__right-phone" href="Tel:8 800 777 33 33">
+              <a className="footer__right-phone" href="#">
                 {" "}
-                <img src={Tel} alt="phone" />8 800 777 33 33
+                <img src={mail} alt="mail" />
+                gamestore@outlook.com
               </a>
             </div>
           </div>
