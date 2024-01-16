@@ -5,7 +5,7 @@ import Inst from "../../img/inst.svg";
 import Vk from "../../img/vk.svg";
 import Fb from "../../img/facebook.svg";
 import Ok from "../../img/ok.svg";
-import mail from "../../img/free-icon-mail-4338894.png";
+import mail from "../../img/mail (1).png";
 import { useNavigate } from "react-router-dom";
 
 const Footer = () => {

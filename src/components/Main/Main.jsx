@@ -63,9 +63,9 @@ const Main = () => {
           <div className="article__card">
             <img src={Lego} alt="img" />
             <div className="article__text">
-              <p>Дата выхода: 07.12.2023</p>
-              <h4>LEGO® Fortnite®</h4>
-              <p className="article__info">
+              <p style={{ color: "#414141" }}>Дата выхода: 07.12.2023</p>
+              <h4 style={{ color: "#414141" }}>LEGO® Fortnite®</h4>
+              <p className="article__info" style={{ color: "#414141" }}>
                 Проявите творческий подход к созданию и настройке своей
                 идеальной домашней базы, используя элементы LEGO®, собранные в
                 окружающем вас мире, а затем нанимайте жителей деревни, чтобы
@@ -76,9 +76,9 @@ const Main = () => {
           <div className="article__card">
             <img src={RocketRacing} alt="img" />
             <div className="article__text">
-              <p>Дата выхода: 08.12.23</p>
-              <h4>Rocket Racing </h4>
-              <p className="article__info">
+              <p style={{ color: "#414141" }}>Дата выхода: 08.12.23</p>
+              <h4 style={{ color: "#414141" }}>Rocket Racing </h4>
+              <p className="article__info" style={{ color: "#414141" }}>
                 Благодаря межигровому шкафчику транспортных средств вы сможете
                 делиться своими любимыми автомобилями между Rocket League и
                 Fortnite. Настройте свою поездку и гоняйте без ограничений —
@@ -89,9 +89,9 @@ const Main = () => {
           <div className="article__card">
             <img src={Immortals} alt="img" />
             <div className="article__text">
-              <p>Дата выхода: Скоро</p>
-              <h4>33 Immortals </h4>
-              <p className="article__info">
+              <p style={{ color: "#414141" }}>Дата выхода: Скоро</p>
+              <h4 style={{ color: "#414141" }}>33 Immortals </h4>
+              <p className="article__info" style={{ color: "#414141" }}>
                 33 Immortals — это кооперативный экшен-рогалик для 33 игроков.
                 Сыграйте проклятую душу и восстайте против окончательного суда
                 Бога. Собирайтесь и совершайте рейды, сотрудничайте, чтобы

@@ -22,7 +22,7 @@ h1 {
 
 .hero__card {
   display: flex;
-  background: #dedddb;
+  background: #1a1919;
   border-radius: 4px;
   padding: 8px 30px;
 }
@@ -49,9 +49,7 @@ h1 {
 .hero__card-red {
   width: 100%;
   max-width: 500px;
-  background: #dedddb;
   border-radius: 4px;
-  box-shadow: 0px 8px 16px #e5ffde;
 }
 .hero__card-red > div {
   width: 100%;

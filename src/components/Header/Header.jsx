@@ -1,10 +1,8 @@
 import React, { useContext, useEffect, useState } from "react";
 import "./header.css";
-import Logo from "../../img/logo.svg";
 import Search from "../../img/search.svg";
-import Heart from "../../img/heart.svg";
-import Cart from "../../img/cart.svg";
-import Avatar from "../../img/avatar.svg";
+import Favourite from "../../img/favourite.png";
+import Cart from "../../img/grocery-store.png";
 import { useNavigate, useSearchParams } from "react-router-dom";
 import { Badge } from "@mui/material";
 import { cartContext } from "../../contexts/cartContext";
@@ -27,7 +25,6 @@ const Header = () => {
     <header className="header">
       <div className="container">
         <div className="header__content">
-          {/* <img onClick={() => navigate("/")} src={Logo} alt="logo" /> */}
           <h3 onClick={() => navigate("/")}>GAME STORE</h3>
           <div className="header__search">
             <input
@@ -39,7 +36,7 @@ const Header = () => {
             <img src={Search} alt="search" />
           </div>
           <div onClick={() => navigate("/favourite")} className="header__ftrs">
-            <img src={Heart} alt="favorite" />
+            <img src={Favourite} alt="favorite" width="25px" />
             <p>Избранное</p>
           </div>
           <div onClick={() => navigate("/cart")} className="header__ftrs">
@@ -50,7 +47,7 @@ const Header = () => {
               badgeContent={count}
               color="error"
             ></Badge>
-            <img src={Cart} alt="cart" />
+            <img src={Cart} alt="cart" width="25px" />
             <p>Корзина</p>
           </div>{" "}
           <div className="header__download">

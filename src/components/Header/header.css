@@ -1,7 +1,7 @@
 .header {
   box-shadow: 2px 4px 8px rgba(0, 0, 0, 0.1);
   padding: 10px;
-  background: #ffffff;
+  background-color: #202020;
 }
 .header p {
   margin-bottom: 0;
@@ -29,7 +29,10 @@
   margin-left: 10px;
   color: #ffffff;
 }
-
+.header__search > input {
+  color: white;
+  background-color: #202020;
+}
 .header__ftrs {
   display: flex;
   flex-direction: column;
