@@ -1,11 +1,12 @@
 import React from "react";
 import useForm from "./useForm";
-import { Button, Form, Alert, Row, Col } from "react-bootstrap";
+import { Button, Form, Row, Col } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./Payment.css";
 import Cards from "react-credit-cards";
 import "react-credit-cards/es/styles-compiled.css";
 import { useNavigate } from "react-router-dom";
+import Coupon from "../../img/coupon.png";
 
 const CreditCardForm = () => {
   const navigate = useNavigate();
@@ -32,7 +33,8 @@ const CreditCardForm = () => {
                 height="24"
                 viewBox="0 0 24 24"
                 fill="none"
-                xmlns="http://www.w3.org/2000/svg">
+                xmlns="http://www.w3.org/2000/svg"
+              >
                 <path
                   fill-rule="evenodd"
                   clip-rule="evenodd"
@@ -67,7 +69,8 @@ const CreditCardForm = () => {
                 height="24"
                 viewBox="0 0 24 24"
                 fill="none"
-                xmlns="http://www.w3.org/2000/svg">
+                xmlns="http://www.w3.org/2000/svg"
+              >
                 <path
                   fill-rule="evenodd"
                   clip-rule="evenodd"
@@ -89,7 +92,8 @@ const CreditCardForm = () => {
               </svg>
               <Form.Control
                 type="text"
-                placeholder="Ваша Фамилия"></Form.Control>
+                placeholder="Ваша Фамилия"
+              ></Form.Control>
             </Form.Group>
             <Form.Group>
               <svg
@@ -98,7 +102,8 @@ const CreditCardForm = () => {
                 height="24"
                 viewBox="0 0 24 24"
                 fill="none"
-                xmlns="http://www.w3.org/2000/svg">
+                xmlns="http://www.w3.org/2000/svg"
+              >
                 <path
                   fill-rule="evenodd"
                   clip-rule="evenodd"
@@ -120,6 +125,13 @@ const CreditCardForm = () => {
               </svg>
               <Form.Control type="text" placeholder="Ваш Адрес"></Form.Control>
             </Form.Group>
+            <Form.Group>
+              <img src={Coupon} alt="img" width={28} />
+              <Form.Control
+                type="text"
+                placeholder="Использовать Промокод"
+              ></Form.Control>
+            </Form.Group>
           </Form>
         </div>
         <div className="box justify-content-center align-items-center">
@@ -133,7 +145,8 @@ const CreditCardForm = () => {
                   height="24"
                   viewBox="0 0 24 24"
                   fill="none"
-                  xmlns="http://www.w3.org/2000/svg">
+                  xmlns="http://www.w3.org/2000/svg"
+                >
                   <path
                     fill-rule="evenodd"
                     clip-rule="evenodd"
@@ -153,7 +166,7 @@ const CreditCardForm = () => {
                   id="cardName"
                   data-testid="cardName"
                   name="cardName"
-                  placeholder="Cardholder Name"
+                  placeholder="Держатель Карты"
                   value={values.name}
                   onChange={handleChange}
                   onFocus={handleFocus}
@@ -167,7 +180,8 @@ const CreditCardForm = () => {
                   height="24"
                   viewBox="0 0 24 24"
                   fill="none"
-                  xmlns="http://www.w3.org/2000/svg">
+                  xmlns="http://www.w3.org/2000/svg"
+                >
                   <path
                     fill-rule="evenodd"
                     clip-rule="evenodd"
@@ -187,7 +201,7 @@ const CreditCardForm = () => {
                   id="cardNumber"
                   data-testid="cardNumber"
                   name="cardNumber"
-                  placeholder="Card Number"
+                  placeholder="Номер карты"
                   value={values.number}
                   onChange={handleChange}
                   onFocus={handleFocus}
@@ -203,7 +217,8 @@ const CreditCardForm = () => {
                       height="24"
                       viewBox="0 0 24 24"
                       fill="none"
-                      xmlns="http://www.w3.org/2000/svg">
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
                       <path
                         fill-rule="evenodd"
                         clip-rule="evenodd"
@@ -223,7 +238,7 @@ const CreditCardForm = () => {
                       id="cardExpiration"
                       data-testid="cardExpiration"
                       name="cardExpiration"
-                      placeholder="Expiration Date"
+                      placeholder="Срок действия карты"
                       value={values.expiration}
                       onChange={handleChange}
                       onFocus={handleFocus}
@@ -241,7 +256,8 @@ const CreditCardForm = () => {
                       height="24"
                       viewBox="0 0 24 24"
                       fill="none"
-                      xmlns="http://www.w3.org/2000/svg">
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
                       <path
                         fill-rule="evenodd"
                         clip-rule="evenodd"
@@ -261,7 +277,7 @@ const CreditCardForm = () => {
                       id="cardSecurityCode"
                       data-testid="cardSecurityCode"
                       name="cardSecurityCode"
-                      placeholder="cvv"
+                      placeholder="CVV"
                       value={values.cvv}
                       onChange={handleChange}
                       onFocus={handleFocus}
@@ -280,14 +296,16 @@ const CreditCardForm = () => {
           justifyContent: "center",
           alignItems: "center",
           marginTop: "20px",
-        }}>
+        }}
+      >
         <Button
           onClick={() => navigate("/")}
           onSubmit={handleSubmit}
           size={"block"}
           data-testid="validateButton"
           id="validateButton"
-          type="submit">
+          type="submit"
+        >
           Заказать
         </Button>
       </div>

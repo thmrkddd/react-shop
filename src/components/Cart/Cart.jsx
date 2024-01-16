@@ -22,7 +22,8 @@ const Cart = ({ item }) => {
             height="24"
             viewBox="0 0 24 24"
             fill="none"
-            xmlns="http://www.w3.org/2000/svg">
+            xmlns="http://www.w3.org/2000/svg"
+          >
             <path
               fill-rule="evenodd"
               clip-rule="evenodd"
@@ -36,7 +37,7 @@ const Cart = ({ item }) => {
           <h2>Корзина</h2>
           <div className="cart__content">
             <div>
-              {cart.products.map(elem => (
+              {cart.products.map((elem) => (
                 <div className="cart__card" key={elem.item.id}>
                   <div className="cart__cart-text">
                     <img src={elem.item.image} alt="" width="100px" />
@@ -55,7 +56,8 @@ const Cart = ({ item }) => {
                         height="24"
                         viewBox="0 0 24 24"
                         fill="none"
-                        xmlns="http://www.w3.org/2000/svg">
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
                         <path
                           fill-rule="evenodd"
                           clip-rule="evenodd"
@@ -72,7 +74,8 @@ const Cart = ({ item }) => {
                         height="24"
                         viewBox="0 0 24 24"
                         fill="none"
-                        xmlns="http://www.w3.org/2000/svg">
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
                         <path
                           fill-rule="evenodd"
                           clip-rule="evenodd"
@@ -93,7 +96,8 @@ const Cart = ({ item }) => {
                       height="35"
                       viewBox="0 0 24 24"
                       fill="none"
-                      xmlns="http://www.w3.org/2000/svg">
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
                       <path
                         fill-rule="evenodd"
                         clip-rule="evenodd"
@@ -132,24 +136,16 @@ const Cart = ({ item }) => {
               </p>
               <div className="bonus__payment">
                 <span className="bonus-parent">
-                  <svg
-                    width="25"
-                    height="24"
-                    viewBox="0 0 25 24"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg">
-                    <path
-                      d="M23.6883 6.66661H1.31196C0.843143 6.66661 0.460308 7.05823 0.503301 7.52051C0.994639 13.0113 6.17826 17.3333 12.5001 17.3333C18.822 17.3333 24.0056 13.0133 24.497 7.52051C24.5379 7.05823 24.1571 6.66661 23.6883 6.66661Z"
-                      fill="#70C05B"
-                    />
-                  </svg>
                   Вы получаете{" "}
                   <span className="bonus">
                     {Math.ceil((cart.totalPrice - cart.discount) * 0.04)}{" "}
                     бонусов
                   </span>
                 </span>
-                <button onClick={() => navigate("/payment")} className="pay__btn">
+                <button
+                  onClick={() => navigate("/payment")}
+                  className="pay__btn"
+                >
                   <p>Оформить заказ</p>
                 </button>
               </div>

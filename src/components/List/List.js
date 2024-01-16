@@ -76,10 +76,10 @@ const List = () => {
               }}
               valueLabelDisplay="auto"
               min={0}
-              max={5000}
+              max={10000}
               step={1}
             />
-            <p>5000</p>
+            <p>10000</p>
           </div>
         </div>
       </div>
