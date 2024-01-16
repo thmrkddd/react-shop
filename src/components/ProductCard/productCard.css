@@ -50,6 +50,7 @@
   line-height: 150%;
   color: gray;
   padding: 8px;
+  transition: 0.3s;
 }
 
 .product__btn {
@@ -61,13 +62,3 @@
   display: flex;
   justify-content: space-around;
 }
-
-.products__text-btn {
-  cursor: pointer;
-  /* transition: 0.2s all; */
-}
-
-/* .products__text-btn:hover {
-  background-color: rgba(112, 192, 91, 1) !important;
-  color: #ffffff;
-} */

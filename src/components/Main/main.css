@@ -22,7 +22,7 @@ h1 {
 
 .hero__card {
   display: flex;
-  background: #bcbab8;
+  background: #dedddb;
   border-radius: 4px;
   padding: 8px 30px;
 }
@@ -34,10 +34,11 @@ h1 {
   flex-direction: column;
   justify-content: center;
   width: 100%;
-  max-width: 203px;
+  max-width: 220px;
 }
 .hero__card > img {
-  width: 200px;
+  width: 150px;
+  margin-left: 20px;
 }
 .hero__cards {
   margin-top: 40px;
@@ -47,8 +48,8 @@ h1 {
 
 .hero__card-red {
   width: 100%;
-  max-width: 573px;
-  background: #e5ffde;
+  max-width: 500px;
+  background: #dedddb;
   border-radius: 4px;
   box-shadow: 0px 8px 16px #e5ffde;
 }
@@ -63,10 +64,6 @@ h1 {
 .shop {
   margin-top: 120px;
 }
-.yandex-map {
-  margin-top: 40px;
-}
-
 .articles {
   margin-top: 120px;
 }

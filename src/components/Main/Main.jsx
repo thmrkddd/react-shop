@@ -1,15 +1,13 @@
 import React from "react";
-
+import { useNavigate } from "react-router-dom";
+import List from "../List/List";
 import "./main.css";
-import CardRed from "../../img/card-red.png";
 import Lego from "../../img/lego.jpg";
 import RocketRacing from "../../img/rocketracing.jpg";
 import Immortals from "../../img/33immortals.png";
 import Spiderman from "../../img/spiderman.jpg";
-import VisaCard from "../../img/pngegg.png";
-import { useNavigate } from "react-router-dom";
-import List from "../List/List";
-
+import VisaCard from "../../img/free-icon-visa-logo-1863.png";
+import Gift from "../../img/free-icon-gift-box-3727213.png";
 const Main = () => {
   const navigate = useNavigate();
 
@@ -42,18 +40,16 @@ const Main = () => {
           <div className="hero__card hero__card-blue">
             <div>
               <h3>Оплачивайте картой VISA</h3>
-              <p>
-                И получайте бонусы и скидки при покупке в магазинах и на сайте
-              </p>
+              <p>И получайте бонусные скидки при покупке в магазинах!</p>
             </div>
             <img className="hero__img" src={VisaCard} alt="card" />
           </div>
           <div className="hero__card hero__card-red">
             <div>
-              <h3>Оформите карту «Северяночка»</h3>
-              <p>И получайте бонусы при покупке в магазинах и на сайте</p>
+              <h3>Загрузите наше приложение</h3>
+              <p>И получайте 2 любые видеоигры на выш выбор!</p>
             </div>
-            <img className="hero__img" src={CardRed} alt="card" />
+            <img className="hero__img" src={Gift} alt="card" />
           </div>
         </div>
       </div>

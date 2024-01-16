@@ -3,18 +3,17 @@ import { useNavigate } from "react-router-dom";
 import { cartContext } from "../../contexts/cartContext";
 import { productsContext } from "../../contexts/productsContext";
 import "./productCard.css";
-import {favContext} from "../../contexts/favContext";
+import { favContext } from "../../contexts/favContext";
 
 const ProductCard = ({ item }) => {
   const { addToCart, checkProductInCart } = React.useContext(cartContext);
 
-  const {addToFav, checkProductInFav} = useContext(favContext)
-
+  const { addToFav, checkProductInFav } = useContext(favContext);
 
   const navigate = useNavigate();
   const { deleteProduct } = useContext(productsContext);
   const [productState, setProductState] = useState(checkProductInCart(item.id));
-  const [favState,setFavState] = useState(checkProductInFav(item.id));
+  const [favState, setFavState] = useState(checkProductInFav(item.id));
 
   return (
     <div>
@@ -23,21 +22,22 @@ const ProductCard = ({ item }) => {
           <div className="products__img-parent">
             <img className="products__img" src={item.image} alt="" />
             <div className="products__img-child">
-              <svg style={{
-                cursor:'pointer',
-                border: favState
-                    ? "1px solid #FF6633"
-                    : "1px solid #70c05b",
-                color: favState ? "red" : "#70c05b",
-              }} onClick={() => {
-                addToFav(item);
-                setFavState(checkProductInFav(item.id));
-              }}
+              <svg
+                style={{
+                  cursor: "pointer",
+                  border: favState ? "1px solid #FF6633" : "1px solid #70c05b",
+                  color: favState ? "red" : "#70c05b",
+                }}
+                onClick={() => {
+                  addToFav(item);
+                  setFavState(checkProductInFav(item.id));
+                }}
                 width="22"
                 height="20"
                 viewBox="0 0 22 20"
                 fill="none"
-                xmlns="http://www.w3.org/2000/svg">
+                xmlns="http://www.w3.org/2000/svg"
+              >
                 <path
                   fillRule="evenodd"
                   clipRule="evenodd"
@@ -62,7 +62,8 @@ const ProductCard = ({ item }) => {
               onClick={() => {
                 addToCart(item);
                 setProductState(checkProductInCart(item.id));
-              }}>
+              }}
+            >
               В корзину
             </button>
             <div className="product__btns">
@@ -73,7 +74,8 @@ const ProductCard = ({ item }) => {
                 height="30"
                 viewBox="0 0 24 24"
                 fill="none"
-                xmlns="http://www.w3.org/2000/svg">
+                xmlns="http://www.w3.org/2000/svg"
+              >
                 <path
                   fillRule="evenodd"
                   clipRule="evenodd"
@@ -106,7 +108,8 @@ const ProductCard = ({ item }) => {
                 height="30"
                 viewBox="0 0 24 24"
                 fill="none"
-                xmlns="http://www.w3.org/2000/svg">
+                xmlns="http://www.w3.org/2000/svg"
+              >
                 <path
                   fillRule="evenodd"
                   clipRule="evenodd"
@@ -127,7 +130,8 @@ const ProductCard = ({ item }) => {
                 height="30"
                 viewBox="0 0 24 24"
                 fill="none"
-                xmlns="http://www.w3.org/2000/svg">
+                xmlns="http://www.w3.org/2000/svg"
+              >
                 <path
                   fillRule="evenodd"
                   clipRule="evenodd"

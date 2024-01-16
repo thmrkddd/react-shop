@@ -24,7 +24,9 @@
   width: 100%;
   max-width: 750px;
 }
-
+.footer__left > h3 {
+  width: 195px;
+}
 .footer__right {
   display: flex;
   width: 340px;
