@@ -3,7 +3,7 @@ import ProductCard from "../ProductCard/ProductCard";
 import { productsContext } from "../../contexts/productsContext";
 import { useSearchParams } from "react-router-dom";
 import { Pagination, Slider } from "@mui/material";
-
+import "./List.css";
 const List = () => {
   const { getProducts, pages, products, deleteProduct } =
     useContext(productsContext);
@@ -68,7 +68,7 @@ const List = () => {
               className="slider"
               style={{
                 width: "500px",
-                color: "gray",
+                color: "rgb(255, 102, 51)",
               }}
               value={price}
               onChange={(e) => {
@@ -94,7 +94,6 @@ const List = () => {
       </div>
       <Pagination
         className="pagination"
-        style={{ marginTop: "20px" }}
         onChange={(event, page) => setCurrentPage(page)}
         page={currentPage}
         variant="outlined"

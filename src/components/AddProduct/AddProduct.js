@@ -1,7 +1,7 @@
 import React, { useContext, useState } from "react";
 import { productsContext } from "../../contexts/productsContext";
 import { useNavigate } from "react-router-dom";
-
+import "./add.css";
 const AddProduct = () => {
   const { createProduct } = useContext(productsContext);
   const navigate = useNavigate();
@@ -16,7 +16,7 @@ const AddProduct = () => {
       image,
     };
     if (!title.trim() || !price || !image.trim()) {
-      alert("Заполните поля!");
+      return;
     } else {
       createProduct(newProduct);
       navigate("/");
@@ -25,33 +25,35 @@ const AddProduct = () => {
 
   return (
     <div
+      className="add"
       style={{
         display: "flex",
         flexDirection: "column",
         alignItems: "center",
-      }}>
+      }}
+    >
       <input
-        style={{ marginTop: 15 }}
-        onChange={e => setTitle(e.target.value)}
+        className="add__actions"
+        onChange={(e) => setTitle(e.target.value)}
         value={title}
         placeholder="Название"
         type="text"
       />
       <input
-        style={{ marginTop: 15 }}
-        onChange={e => setPrice(+e.target.value)}
+        className="add__actions"
+        onChange={(e) => setPrice(+e.target.value)}
         value={price}
         placeholder="Цена"
         type="number"
       />
       <input
-        style={{ marginTop: 15 }}
-        onChange={e => setImage(e.target.value)}
+        className="add__actions"
+        onChange={(e) => setImage(e.target.value)}
         value={image}
-        placeholder="Картинка"
+        placeholder="Изображение"
         type="text"
       />
-      <button style={{ marginTop: 15 }} onClick={handleSave}>
+      <button className="add__actions" onClick={handleSave}>
         Save
       </button>
     </div>

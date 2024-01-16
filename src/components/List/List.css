@@ -1,0 +1,13 @@
+.pagination {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 20px;
+}
+.pagination button {
+  background-color: #1a1919 !important;
+  color: white !important;
+}
+.pagination li > div {
+  color: white !important;
+}

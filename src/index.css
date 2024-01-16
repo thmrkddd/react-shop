@@ -7,7 +7,7 @@
 a {
   text-decoration: none !important;
   font-size: 16px !important;
-  color: #414141 !important;
+  color: white !important;
 }
 .container {
   max-width: 1200px;
@@ -17,26 +17,26 @@ h2 {
   font-weight: 700 !important;
   font-size: 36px !important;
   line-height: 150% !important;
-  color: #414141 !important;
+  color: white;
 }
 h3 {
   font-weight: 700 !important;
   font-size: 24px !important;
   line-height: 150% !important;
-  color: #414141 !important;
+  color: white;
   margin-bottom: 0 !important;
 }
 h4 {
   font-weight: 700 !important;
   font-size: 18px !important;
   line-height: 150% !important;
-  color: #414141 !important;
+  color: white;
 }
 p {
   font-weight: 400 !important;
   font-size: 14px !important;
   line-height: 150%;
-  color: #414141;
+  color: white;
   margin-bottom: 0 !important;
 }
 /* .yandex-map {
@@ -48,7 +48,7 @@ body {
   position: relative;
   min-height: 100vh;
   padding-bottom: 200px;
-  background: rgb(236, 235, 235) !important;
+  background: rgb(18, 18, 18) !important;
 }
 footer {
   position: absolute;
