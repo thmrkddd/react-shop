@@ -10,7 +10,7 @@ import Logo from "../../img/logo-about.svg";
 const About = () => {
   return (
     <div>
-      <div className="shapes__container container">
+      {/* <div className="shapes__container container">
         <img className="about__shapes" src={Shapes} alt="" />
       </div>
       <div className="container about">
@@ -65,7 +65,7 @@ const About = () => {
           <img src={Logo} alt="logo" />
           <h3>Спасибо за то, что вы с нами. Северяночка, везет всегда!</h3>
         </div>
-      </div>
+      </div> */}
     </div>
   );
 };
