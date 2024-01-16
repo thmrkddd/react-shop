@@ -21,7 +21,7 @@
   margin-top: 24px;
   display: flex;
   align-items: center;
-  background: #ffffff;
+  background: #1a1919;
   box-shadow: 1px 2px 4px rgba(0, 0, 0, 0.1);
   border-radius: 4px;
 }
@@ -78,7 +78,7 @@
   color: #414141;
 }
 .dis {
-  color: #ff6633;
+  color: #70c05b;
 }
 .cart__pay > p:nth-child(2) {
   margin-top: 10px;
@@ -87,7 +87,7 @@
   padding: 4px 8px;
   display: flex;
   align-items: center;
-  color: #414141;
+  color: #70c05b;
   font-size: 12px;
   line-height: 150%;
 }
@@ -105,12 +105,12 @@
 .pay__btn {
   margin-top: 20px;
   padding: 15px 19px;
-  background: #fcd5ba;
+  background: #fff;
   border-radius: 4px;
   border: none;
 }
 .pay__btn > p {
-  color: #ff6633 !important;
+  color: #70c05b !important;
   font-weight: 400 !important;
   font-size: 24px !important;
   line-height: 150% !important;

@@ -138,7 +138,7 @@ const Cart = ({ item }) => {
                 <span className="bonus-parent">
                   Вы получаете{" "}
                   <span className="bonus">
-                    {Math.ceil((cart.totalPrice - cart.discount) * 0.04)}{" "}
+                    {Math.ceil((cart.totalPrice - cart.discount) * 0.02)}{" "}
                     бонусов
                   </span>
                 </span>

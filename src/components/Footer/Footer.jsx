@@ -40,7 +40,7 @@ const Footer = () => {
               </a>
               <a className="footer__right-phone" href="#">
                 {" "}
-                <img src={mail} alt="mail" />
+                <img src={mail} alt="mail" style={{ m: "0 5px" }} />
                 gamestore@outlook.com
               </a>
             </div>
