@@ -8,3 +8,6 @@
   background-color: #1a1919 !important;
   color: white !important;
 }
+.pagination li > div {
+  color: white !important;
+}

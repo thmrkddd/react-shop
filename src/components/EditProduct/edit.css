@@ -6,19 +6,8 @@
 .edit > h4 {
   margin-top: 15px;
 }
-.edit > button {
-  margin-top: 10px;
-  border: 1px solid #70c05b;
-  border-radius: 4px;
-  font-weight: 400;
-  font-size: 16px;
-  line-height: 150%;
-  color: #70c05b;
-  padding: 8px;
-  background-color: inherit;
-  cursor: pointer;
-  transition: all 0.2s;
-}
-.edit > button:hover {
-  background-color: white;
+.edit__actions {
+  background-color: #202020;
+  color: white;
+  border: none;
 }
