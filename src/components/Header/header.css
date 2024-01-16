@@ -46,10 +46,16 @@
   align-items: center;
   cursor: pointer;
 }
-.header__download button {
-  border: 1px solid black;
+.header__download > button {
+  border: 1px solid #70c05b;
   padding: 5px 12px;
-  background: #fff;
+  color: white;
+  background: #70c05b;
+  transition: 0.3s;
+}
+.header__download > button:hover {
+  color: black;
+  background: white;
 }
 .header__avatar {
   display: flex;
