@@ -18,9 +18,9 @@ const Details = () => {
       <div className="container">
         <div className="info">
           <h2>Название: {oneProduct.title}</h2>
+          <h2>Код продукта: {randomNumber}</h2>
           <h3>Цена: {oneProduct.price}</h3>
           <h3>Жанр: {oneProduct.category}</h3>
-          <h4>Код продукта: {randomNumber}</h4>
           <img src={oneProduct.image} width="50%" alt="product" />
         </div>
       </div>
