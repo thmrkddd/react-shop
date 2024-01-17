@@ -10,13 +10,17 @@ const Details = () => {
   useEffect(() => {
     getOneProduct(id);
   }, []);
+  let min = 1000;
+  let max = 10000000;
+  let randomNumber = Math.floor(Math.random() * (max - min + 1)) + min;
   return oneProduct ? (
     <div>
       <div className="container">
         <div className="info">
-          <h3>Название: {oneProduct.title}</h3>
-          <p>Цена: {oneProduct.price}</p>
-          <p>Жанр: {oneProduct.category}</p>
+          <h2>Название: {oneProduct.title}</h2>
+          <h3>Цена: {oneProduct.price}</h3>
+          <h3>Жанр: {oneProduct.category}</h3>
+          <h4>Код продукта: {randomNumber}</h4>
           <img src={oneProduct.image} width="50%" alt="product" />
         </div>
       </div>
