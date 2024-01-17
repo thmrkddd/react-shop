@@ -7,18 +7,23 @@ import "./List.css";
 const List = () => {
   const { getProducts, pages, products, deleteProduct } =
     useContext(productsContext);
-
   const [searchParams, setSearchParams] = useSearchParams();
-
   const [currentPage, setCurrentPage] = useState(
     searchParams.get("_page") ? +searchParams.get("_page") : 1
   );
-
   const [price, setPrice] = useState([0, 10000]);
+  const [searchParam, setSearchParam] = useSearchParams();
+  const [search, setSearch] = useState(
+    searchParam.get("q") ? searchParam.get("q") : ""
+  );
   useEffect(() => {
     getProducts();
   }, []);
-
+  useEffect(() => {
+    setSearchParam({
+      q: search,
+    });
+  }, [search]);
   useEffect(() => {
     setSearchParams({
       _page: currentPage,
@@ -34,12 +39,48 @@ const List = () => {
 
   return (
     <div className="container">
+      <div className="category__select">
+        <button value="Экшен" onClick={(e) => setSearch(e.target.value)}>
+          Экшен
+        </button>
+        <button value="Казуальные" onClick={(e) => setSearch(e.target.value)}>
+          Казуальные
+        </button>
+        <button value="Головоломки" onClick={(e) => setSearch(e.target.value)}>
+          Головоломки
+        </button>
+        <button value="Аркады" onClick={(e) => setSearch(e.target.value)}>
+          Аркады
+        </button>
+        <button value="Стратегия" onClick={(e) => setSearch(e.target.value)}>
+          Стратегия
+        </button>
+        <button value="Шутеры" onClick={(e) => setSearch(e.target.value)}>
+          Шутеры
+        </button>
+        <button
+          value="Настольные игры"
+          onClick={(e) => setSearch(e.target.value)}
+        >
+          Настольные игры
+        </button>
+        <button value="Приключения" onClick={(e) => setSearch(e.target.value)}>
+          Приключения
+        </button>
+        <button value="Симулятор" onClick={(e) => setSearch(e.target.value)}>
+          Симулятор
+        </button>
+        <button value="Открытый мир" onClick={(e) => setSearch(e.target.value)}>
+          Открытый мир
+        </button>
+      </div>
       <div
         style={{
           display: "flex",
           justifyContent: "center",
           alignItems: "center",
           width: "500px",
+
           marginTop: "20px",
           flexDirection: "column",
         }}

@@ -19,7 +19,6 @@ function reducer(state = INIT_STATE, action) {
       return state;
   }
 }
-
 const CartContextProvider = ({ children }) => {
   const [state, dispatch] = useReducer(reducer, INIT_STATE);
   function addToCart(product) {
@@ -36,18 +35,16 @@ const CartContextProvider = ({ children }) => {
       subPrice: product.price,
     };
     const isProductInCart = cart.products.some(
-      item => item.item.id === newProduct.item.id
+      (item) => item.item.id === newProduct.item.id
     );
     console.log("товар в корзине", isProductInCart);
     if (isProductInCart) {
       cart.products = cart.products.filter(
-        item => item.item.id !== newProduct.item.id
+        (item) => item.item.id !== newProduct.item.id
       );
     } else {
       cart.products.push(newProduct);
     }
-
-    // cart.products.push(newProduct);
     localStorage.setItem("cart", JSON.stringify(cart));
     getCart();
   }
@@ -77,7 +74,7 @@ const CartContextProvider = ({ children }) => {
         totalPrice: 0,
       };
     }
-    cart.products = cart.products.filter(item => item.item.id !== id);
+    cart.products = cart.products.filter((item) => item.item.id !== id);
     localStorage.setItem("cart", JSON.stringify(cart));
     getCart();
   }
@@ -89,7 +86,7 @@ const CartContextProvider = ({ children }) => {
         totalPrice: 0,
       };
     }
-    const isProductInCart = cart.products.some(item => item.item.id === id);
+    const isProductInCart = cart.products.some((item) => item.item.id === id);
     return isProductInCart;
   }
   function changeCount(count, id) {
@@ -97,7 +94,7 @@ const CartContextProvider = ({ children }) => {
       return;
     }
     let cart = JSON.parse(localStorage.getItem("cart"));
-    cart.products = cart.products.map(item => {
+    cart.products = cart.products.map((item) => {
       if (item.item.id === id) {
         item.count = count;
         item.subPrice = count * item.item.price;
@@ -117,7 +114,8 @@ const CartContextProvider = ({ children }) => {
         deleteFromCart,
         changeCount,
         checkProductInCart,
-      }}>
+      }}
+    >
       {children}
     </cartContext.Provider>
   );

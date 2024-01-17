@@ -14,9 +14,9 @@ const Details = () => {
     <div>
       <div className="container">
         <div className="info">
-          <h2>{oneProduct.title}</h2>
-          <p>{oneProduct.title}</p>
-          <p>{oneProduct.price}</p>
+          <h3>Название: {oneProduct.title}</h3>
+          <p>Цена: {oneProduct.price}</p>
+          <p>Жанр: {oneProduct.category}</p>
           <img src={oneProduct.image} width="50%" alt="product" />
         </div>
       </div>

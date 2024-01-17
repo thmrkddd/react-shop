@@ -7,7 +7,9 @@
   margin-top: 15px;
 }
 .edit__actions {
+  padding: 10px 15px;
   background-color: #202020;
-  color: white;
   border: none;
+  color: gray;
+  text-align: center;
 }
