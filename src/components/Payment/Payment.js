@@ -6,11 +6,13 @@ import "./Payment.css";
 import Cards from "react-credit-cards";
 import "react-credit-cards/es/styles-compiled.css";
 import { useNavigate } from "react-router-dom";
-import Coupon from "../../img/coupon.png";
+import Coupon from "../../img/ticket (1).png";
 
 const CreditCardForm = () => {
   const navigate = useNavigate();
-
+  function clearCart() {
+    localStorage.removeItem("cart");
+  }
   const { handleChange, handleFocus, handleSubmit, values, errors } = useForm();
   return (
     <div>
@@ -60,7 +62,11 @@ const CreditCardForm = () => {
                   fill="#414141"
                 />
               </svg>
-              <Form.Control type="text" placeholder="Ваше Имя"></Form.Control>
+              <Form.Control
+                className="input__control"
+                type="text"
+                placeholder="Ваше Имя"
+              ></Form.Control>
             </Form.Group>
             <Form.Group>
               <svg
@@ -91,6 +97,7 @@ const CreditCardForm = () => {
                 />
               </svg>
               <Form.Control
+                className="input__control"
                 type="text"
                 placeholder="Ваша Фамилия"
               ></Form.Control>
@@ -123,11 +130,17 @@ const CreditCardForm = () => {
                   fill="#414141"
                 />
               </svg>
-              <Form.Control type="text" placeholder="Ваш Адрес"></Form.Control>
+              <Form.Control
+                className="input__control"
+                type="text"
+                placeholder="Ваш Адрес"
+              ></Form.Control>
             </Form.Group>
             <Form.Group>
               <img src={Coupon} alt="img" width={28} />
+              <span className="thespan">(Необязательно)</span>
               <Form.Control
+                className="input__control"
                 type="text"
                 placeholder="Использовать Промокод"
               ></Form.Control>
@@ -162,6 +175,7 @@ const CreditCardForm = () => {
                 </svg>
 
                 <Form.Control
+                  className="input__control"
                   type="text"
                   id="cardName"
                   data-testid="cardName"
@@ -197,7 +211,9 @@ const CreditCardForm = () => {
                 </svg>
 
                 <Form.Control
-                  type="number"
+                  className="input__control"
+                  maxLength="16"
+                  type="text"
                   id="cardNumber"
                   data-testid="cardNumber"
                   name="cardNumber"
@@ -234,6 +250,7 @@ const CreditCardForm = () => {
                     </svg>
 
                     <Form.Control
+                      className="input__control"
                       type="text"
                       id="cardExpiration"
                       data-testid="cardExpiration"
@@ -273,7 +290,9 @@ const CreditCardForm = () => {
                     </svg>
 
                     <Form.Control
-                      type="number"
+                      className="input__control"
+                      maxLength="3"
+                      type="text"
                       id="cardSecurityCode"
                       data-testid="cardSecurityCode"
                       name="cardSecurityCode"
@@ -299,7 +318,10 @@ const CreditCardForm = () => {
         }}
       >
         <Button
-          onClick={() => navigate("/")}
+          onClick={() => {
+            navigate("/cart");
+            clearCart();
+          }}
           onSubmit={handleSubmit}
           size={"block"}
           data-testid="validateButton"

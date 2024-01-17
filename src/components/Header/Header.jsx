@@ -6,9 +6,6 @@ import Cart from "../../img/grocery-store.png";
 import { useNavigate, useSearchParams } from "react-router-dom";
 import { Badge } from "@mui/material";
 import { cartContext } from "../../contexts/cartContext";
-import LoginButton from "../LoginButton";
-import LogoutButton from "../LogoutButton";
-import Profile from "../Profile";
 const Header = () => {
   const { count } = useContext(cartContext);
   const [searchParam, setSearchParam] = useSearchParams();
@@ -54,13 +51,7 @@ const Header = () => {
             {" "}
             <button>Загрузить</button>
           </div>
-          <div className="header__avatar">
-            <LoginButton />
-            <LogoutButton />
-            <Profile />
-            {/* <img src={Avatar} alt="avatar" />
-            <p>Alex</p> */}
-          </div>{" "}
+          <div className="header__avatar"></div>{" "}
         </div>
       </div>
     </header>

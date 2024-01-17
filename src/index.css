@@ -39,10 +39,6 @@ p {
   color: white;
   margin-bottom: 0 !important;
 }
-/* .yandex-map {
-  display: flex;
-  justify-content: center;
-} */
 
 body {
   position: relative;
@@ -54,13 +50,4 @@ footer {
   position: absolute;
   bottom: 0;
   width: 100%;
-}
-
-.login__button {
-  background-color: inherit;
-  border: 0;
-}
-.logout__button {
-  background-color: inherit;
-  border: 0;
 }

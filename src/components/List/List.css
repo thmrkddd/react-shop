@@ -11,3 +11,16 @@
 .pagination li > div {
   color: white !important;
 }
+.category__select {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+.category__select > button {
+  border: 2px solid #1a1919;
+  border-radius: 15px;
+  padding: 5px 10px;
+  background: none;
+  color: gray;
+}

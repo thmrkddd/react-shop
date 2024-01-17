@@ -8,11 +8,10 @@ const EditProduct = () => {
     useContext(productsContext);
   const navigate = useNavigate();
   const { id } = useParams();
-
   const [title, setTitle] = useState("");
   const [price, setPrice] = useState("");
   const [image, setImage] = useState("");
-
+  const [category, setCategory] = useState("");
   useEffect(() => {
     getOneProduct(id);
   }, []);
@@ -28,6 +27,7 @@ const EditProduct = () => {
     const editedProduct = {
       title,
       price,
+      category,
       image,
     };
     updateProduct(id, editedProduct);
@@ -55,6 +55,45 @@ const EditProduct = () => {
           placeholder="Цена"
           type="text"
         />
+
+        <h4>Категория</h4>
+        <select
+          className="edit__actions"
+          style={{ padding: "10px 35px" }}
+          onChange={(e) => setCategory(e.target.value)}
+        >
+          {" "}
+          <option name="ekshen" value="Экшен">
+            Экшен
+          </option>
+          <option name="casual" value="Казуальное">
+            Казуальные
+          </option>
+          <option name="golovolomki" value="Головоломки">
+            Головоломки
+          </option>
+          <option name="arcade" value="Аркады">
+            Аркады
+          </option>
+          <option name="strategy" value="Стратегия">
+            Стратегия
+          </option>
+          <option name="shooters" value="Шутеры">
+            Шутеры
+          </option>
+          <option name="table" value="Настольные игры">
+            Настольные игры
+          </option>
+          <option name="adventure" value="Приключения">
+            Приключения
+          </option>
+          <option name="simulation" value="Симулятор">
+            Симуляторы
+          </option>
+          <option name="world" value="Открытый мир">
+            Открытый мир
+          </option>
+        </select>
         <h4>Изображение</h4>
         <input
           className="edit__actions"

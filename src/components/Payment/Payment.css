@@ -1,32 +1,41 @@
 .container__pay {
-    margin-top: 30px;
-    width: 100%;
-    display: flex;
-    justify-content: center;
+  margin-top: 30px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
 }
 
 .form-div {
-    width: 400px;
-    padding: 30px;
-    border-radius: 10px;
-    -webkit-box-shadow: -1px 8px 15px 0 rgba(0, 0, 0, 0.44);
-    -moz-box-shadow: -1px 8px 15px 0 rgba(0, 0, 0, 0.44);
-    box-shadow: -1px 8px 15px 0 rgba(0, 0, 0, 0.44);
+  width: 400px;
+  padding: 30px;
+  border-radius: 10px;
+  -webkit-box-shadow: -1px 8px 15px 0 rgba(0, 0, 0, 0.44);
+  -moz-box-shadow: -1px 8px 15px 0 rgba(0, 0, 0, 0.44);
+  box-shadow: -1px 8px 15px 0 rgba(0, 0, 0, 0.44);
 }
 
-.alert{
-    text-align: center;
-    margin-top: 20px;
+.alert {
+  text-align: center;
+  margin-top: 20px;
 }
 
-.container__name{
-    margin-right: 100px;
+.container__name {
+  margin-right: 100px;
 }
 
 .svg__pay {
-    margin: 5px 0;
+  margin: 5px 0;
 }
 
-.creditCard{
-    margin-top: 111px;
+.creditCard {
+  margin-top: 111px;
+}
+.thespan {
+  margin-left: 5px;
+  color: rgb(87, 87, 87) !important;
+}
+.input__control {
+  background-color: #202020;
+  border: 1px solid gray;
+  color: white;
 }

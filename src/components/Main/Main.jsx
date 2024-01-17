@@ -38,7 +38,7 @@ const Main = () => {
           <div className="hero__card hero__card-red">
             <div>
               <h3>Загрузите наше приложение</h3>
-              <p>И получайте 2 любые видеоигры на выш выбор!</p>
+              <p>И получайте 2 любые видеоигры на выш выбор в подарок!</p>
             </div>
             <img className="hero__img hero__gift" src={Gift} alt="card" />
           </div>
