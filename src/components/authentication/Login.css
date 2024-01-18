@@ -1,0 +1,35 @@
+.login__form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 40px;
+}
+.login__form > h1 {
+  color: white !important;
+}
+.login__form > input {
+  padding: 10px 35px;
+  margin-top: 15px;
+  background-color: #202020;
+  border: none;
+  text-align: center;
+  color: white;
+}
+.login__form > input::placeholder {
+  color: white !important;
+}
+.login__form > button {
+  padding: 10px 35px;
+  margin-top: 15px;
+  background-color: #70c05b;
+  border: none;
+  color: white;
+}
+span {
+  color: white;
+  margin-right: 5px;
+}
+.login__remember > a {
+  color: rgb(14, 86, 173) !important;
+}

@@ -4,10 +4,13 @@ import Search from "../../img/search.svg";
 import Favourite from "../../img/favourite.png";
 import Cart from "../../img/grocery-store.png";
 import { useNavigate, useSearchParams } from "react-router-dom";
-import { Badge } from "@mui/material";
+import { Avatar, Badge, Tooltip } from "@mui/material";
 import { cartContext } from "../../contexts/cartContext";
+import { useAuth } from "../../contexts/AuthContext";
+
 const Header = () => {
   const { count } = useContext(cartContext);
+  const { user, logOut } = useAuth();
   const [searchParam, setSearchParam] = useSearchParams();
   const [search, setSearch] = useState(
     searchParam.get("q") ? searchParam.get("q") : ""
@@ -18,6 +21,9 @@ const Header = () => {
       q: search,
     });
   }, [search]);
+  function handleLogOut() {
+    logOut();
+  }
   return (
     <header className="header">
       <div className="container">
@@ -51,7 +57,23 @@ const Header = () => {
             {" "}
             <button>Загрузить</button>
           </div>
-          <div className="header__avatar"></div>{" "}
+          {user ? (
+            <div className="header__avatar">
+              {" "}
+              <Tooltip title={user.email}>
+                {" "}
+                <Avatar alt={user.displayName} src={user.photoUrl} />
+              </Tooltip>
+              <button onClick={handleLogOut()}>Log Out</button>
+            </div>
+          ) : (
+            <div className="header__avatar">
+              <button>Войти</button>
+              <button onClick={navigate(() => "/register")}>
+                Зарегистрироваться
+              </button>
+            </div>
+          )}
         </div>
       </div>
     </header>

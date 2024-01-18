@@ -23,4 +23,9 @@
   padding: 5px 10px;
   background: none;
   color: gray;
+  transition: 0.3s;
+}
+.category__select > button:hover {
+  background: rgb(255, 102, 51) !important;
+  color: white !important;
 }
