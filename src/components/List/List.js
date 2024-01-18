@@ -183,10 +183,6 @@ const List = () => {
             <p>0</p>
             <Slider
               className="slider"
-              style={{
-                width: "500px",
-                color: "rgb(255, 102, 51)",
-              }}
               value={price}
               onChange={(e) => {
                 setPrice(e.target.value);

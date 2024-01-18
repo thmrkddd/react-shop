@@ -10,7 +10,7 @@
 }
 .register__form > input {
   padding: 10px 35px;
-  margin-top: 15px;
+  margin-top: 5px;
   background-color: #202020;
   border: none;
   text-align: center;
@@ -20,15 +20,15 @@
   color: white !important;
 }
 .register__form > button {
-  padding: 10px 35px;
-  margin-top: 15px;
+  padding: 10px 15px;
+  margin-top: 5px;
   background-color: #70c05b;
   border: none;
   color: white;
 }
 .register__remember {
   display: flex;
-  margin-top: 10px;
+  margin-top: 5px;
 }
 span {
   color: white;
@@ -37,6 +37,10 @@ span {
 .register__remember > input {
   width: 20px;
 }
-.register__remember > a {
+.register__tologin {
+  margin-top: 5px;
+}
+.register__tologin > a {
   color: rgb(14, 86, 173) !important;
+  cursor: pointer;
 }

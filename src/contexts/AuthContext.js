@@ -1,16 +1,13 @@
-import React, { createContext, useContext, useEffect, useReducer } from "react";
+import React, { useContext, useEffect, useReducer } from "react";
 import { auth } from "../firebase";
 import {
-  GoogleAuthProvider,
   createUserWithEmailAndPassword,
   onAuthStateChanged,
   signInWithEmailAndPassword,
-  signInWithPopup,
   signOut,
 } from "firebase/auth";
-import { useNavigate } from "react-router-dom";
 
-const authContext = createContext();
+const authContext = React.createContext();
 export const useAuth = () => useContext(authContext);
 const INIT_STATE = {
   user: null,
@@ -28,8 +25,7 @@ const ACTIONS_USER = {
 };
 const AuthContext = ({ children }) => {
   const [state, dispatch] = useReducer(reducer, INIT_STATE);
-  const googleProvider = new GoogleAuthProvider();
-  const navigate = useNavigate();
+
   const checkUser = () => {
     onAuthStateChanged(auth, (user) => {
       dispatch({ type: ACTIONS_USER.CHECK_USER, payload: user });
@@ -38,13 +34,7 @@ const AuthContext = ({ children }) => {
   useEffect(() => {
     checkUser();
   }, []);
-  const authWithGoogle = async () => {
-    try {
-      await signInWithPopup(auth, googleProvider);
-    } catch (error) {
-      console.error(error);
-    }
-  };
+
   const register = (email, password) => {
     return createUserWithEmailAndPassword(auth, email, password);
   };
@@ -58,8 +48,8 @@ const AuthContext = ({ children }) => {
       console.error(error);
     }
   };
-  const values = { authWithGoogle, register, login, logOut, user: state.user };
-  return <AuthContext.Provider value={values}>{children}</AuthContext.Provider>;
+  const values = { register, login, logOut, user: state.user };
+  return <authContext.Provider value={values}>{children}</authContext.Provider>;
 };
 
 export default AuthContext;

@@ -3,24 +3,24 @@ import "./Register.css";
 import { useAuth } from "../../contexts/AuthContext";
 import { useNavigate } from "react-router-dom";
 const Register = () => {
-  const { authWithGoogle, register } = useAuth();
+  const { register } = useAuth();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [error, setError] = useState("");
+  const [error, isError] = useState(false);
   const navigate = useNavigate();
   const handleSubmit = async () => {
-    try {
+    if (email || password) {
       await register(email, password);
-    } catch (error) {
-      setError(error.message);
+      navigate("/");
+    } else {
+      return isError(true);
     }
-    navigate("/");
   };
   return (
     <>
-      <form className="register__form">
+      <div className="register__form">
         <h1>Регистрация</h1>
-        {error && <p>{error}</p>}
+        {error ? <p style={{ color: "red" }}>Ошибка, заполните поля!</p> : null}
         <input
           type="email"
           placeholder="Введите почту"
@@ -31,19 +31,18 @@ const Register = () => {
           placeholder="Введите пароль"
           onChange={(e) => setPassword(e.target.value)}
         />
-        <button onClick={handleSubmit}>Зарегистрироваться</button>
-        <button onClick={() => authWithGoogle()}>Продолжить с Google</button>
         <div className="register__remember">
           {" "}
           <span>Запомнить меня</span>
           <input type="checkbox" />
         </div>
+        <button onClick={() => handleSubmit()}>Зарегистрироваться</button>
         <div className="register__tologin">
           {" "}
           <span>Есть аккаунт?</span>
-          <a href="/login">Войти</a>
+          <a onClick={() => navigate("/login")}>Войти</a>
         </div>
-      </form>
+      </div>
     </>
   );
 };

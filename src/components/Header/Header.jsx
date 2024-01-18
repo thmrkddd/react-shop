@@ -12,9 +12,11 @@ const Header = () => {
   const { count } = useContext(cartContext);
   const { user, logOut } = useAuth();
   const [searchParam, setSearchParam] = useSearchParams();
-  const [search, setSearch] = useState(
-    searchParam.get("q") ? searchParam.get("q") : ""
-  );
+  const [search, setSearch] = useState();
+  const [click, isClick] = useState(false);
+  useEffect(() => {
+    setSearchParam(searchParam.get("q") ? searchParam.get("q") : "");
+  }, []);
   const navigate = useNavigate();
   useEffect(() => {
     setSearchParam({
@@ -24,6 +26,12 @@ const Header = () => {
   function handleLogOut() {
     logOut();
   }
+  useEffect(() => {
+    navigate("/");
+  }, []);
+  const isProfileClicked = () => {
+    isClick(true);
+  };
   return (
     <header className="header">
       <div className="container">
@@ -56,24 +64,36 @@ const Header = () => {
           <div className="header__download">
             {" "}
             <button>Загрузить</button>
-          </div>
-          {user ? (
-            <div className="header__avatar">
-              {" "}
-              <Tooltip title={user.email}>
+          </div>{" "}
+          <div className="header__avatar">
+            {user ? (
+              <div className="header__avatar-image">
+                <Tooltip title={user.email}>
+                  <Avatar
+                    alt={user.displayName}
+                    src={user.photoUrl}
+                    onClick={() => isProfileClicked()}
+                  />
+                </Tooltip>
+                {click ? (
+                  <button
+                    style={{ marginTop: "-6px" }}
+                    onClick={() => handleLogOut()}
+                  >
+                    Log Out
+                  </button>
+                ) : null}
+              </div>
+            ) : (
+              <>
                 {" "}
-                <Avatar alt={user.displayName} src={user.photoUrl} />
-              </Tooltip>
-              <button onClick={handleLogOut()}>Log Out</button>
-            </div>
-          ) : (
-            <div className="header__avatar">
-              <button>Войти</button>
-              <button onClick={navigate(() => "/register")}>
-                Зарегистрироваться
-              </button>
-            </div>
-          )}
+                <button onClick={() => navigate("/login")}>Войти</button>
+                <button onClick={() => navigate("/register")}>
+                  Зарегистрироваться
+                </button>
+              </>
+            )}{" "}
+          </div>
         </div>
       </div>
     </header>
