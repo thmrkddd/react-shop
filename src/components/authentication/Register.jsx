@@ -9,7 +9,7 @@ const Register = () => {
   const [error, isError] = useState(false);
   const navigate = useNavigate();
   const handleSubmit = async () => {
-    if (email || password) {
+    if (email || password >= 8) {
       await register(email, password);
       navigate("/");
     } else {
@@ -27,6 +27,7 @@ const Register = () => {
           onChange={(e) => setEmail(e.target.value)}
         />
         <input
+          min={8}
           type="password"
           placeholder="Введите пароль"
           onChange={(e) => setPassword(e.target.value)}
