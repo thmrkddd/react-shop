@@ -6,11 +6,9 @@ import "./productCard.css";
 import { favContext } from "../../contexts/favContext";
 
 const ProductCard = ({ item }) => {
-  const { addToCart, checkProductInCart } = React.useContext(cartContext);
-
-  const { addToFav, checkProductInFav } = useContext(favContext);
-
   const navigate = useNavigate();
+  const { addToCart, checkProductInCart } = React.useContext(cartContext);
+  const { addToFav, checkProductInFav } = useContext(favContext);
   const { deleteProduct } = useContext(productsContext);
   const [productState, setProductState] = useState(checkProductInCart(item.id));
   const [favState, setFavState] = useState(checkProductInFav(item.id));

@@ -36,41 +36,117 @@ const List = () => {
   useEffect(() => {
     getProducts();
   }, [searchParams]);
-
+  const [isActive, setIsActive] = useState(false);
+  const handleButtonClick = (buttonNumber) => {
+    setIsActive(buttonNumber);
+  };
+  function getButtonStyles(buttonNumber) {
+    return {
+      background: isActive === buttonNumber ? "rgb(255, 102, 51)" : "none",
+      color: isActive === buttonNumber ? "white" : "gray",
+    };
+  }
   return (
     <div className="container">
       <div className="category__select">
-        <button value="Экшен" onClick={(e) => setSearch(e.target.value)}>
+        <button
+          value="Экшен"
+          onClick={(e) => {
+            setSearch(e.target.value);
+            handleButtonClick(1);
+          }}
+          style={getButtonStyles(1)}
+        >
           Экшен
         </button>
-        <button value="Казуальные" onClick={(e) => setSearch(e.target.value)}>
+        <button
+          value="Казуальные"
+          onClick={(e) => {
+            setSearch(e.target.value);
+            handleButtonClick(2);
+          }}
+          style={getButtonStyles(2)}
+        >
           Казуальные
         </button>
-        <button value="Головоломки" onClick={(e) => setSearch(e.target.value)}>
+        <button
+          value="Головоломки"
+          onClick={(e) => {
+            setSearch(e.target.value);
+            handleButtonClick(3);
+          }}
+          style={getButtonStyles(3)}
+        >
           Головоломки
         </button>
-        <button value="Аркады" onClick={(e) => setSearch(e.target.value)}>
+        <button
+          value="Аркады"
+          onClick={(e) => {
+            setSearch(e.target.value);
+            handleButtonClick(4);
+          }}
+          style={getButtonStyles(4)}
+        >
           Аркады
         </button>
-        <button value="Стратегия" onClick={(e) => setSearch(e.target.value)}>
+        <button
+          value="Стратегия"
+          onClick={(e) => {
+            setSearch(e.target.value);
+            handleButtonClick(5);
+          }}
+          style={getButtonStyles(5)}
+        >
           Стратегия
         </button>
-        <button value="Шутеры" onClick={(e) => setSearch(e.target.value)}>
+        <button
+          value="Шутеры"
+          onClick={(e) => {
+            setSearch(e.target.value);
+            handleButtonClick(6);
+          }}
+          style={getButtonStyles(6)}
+        >
           Шутеры
         </button>
         <button
           value="Настольные игры"
-          onClick={(e) => setSearch(e.target.value)}
+          onClick={(e) => {
+            setSearch(e.target.value);
+            handleButtonClick(7);
+          }}
+          style={getButtonStyles(7)}
         >
           Настольные игры
         </button>
-        <button value="Приключения" onClick={(e) => setSearch(e.target.value)}>
+        <button
+          value="Приключения"
+          onClick={(e) => {
+            setSearch(e.target.value);
+            handleButtonClick(8);
+          }}
+          style={getButtonStyles(8)}
+        >
           Приключения
         </button>
-        <button value="Симулятор" onClick={(e) => setSearch(e.target.value)}>
+        <button
+          value="Симулятор"
+          onClick={(e) => {
+            setSearch(e.target.value);
+            handleButtonClick(9);
+          }}
+          style={getButtonStyles(9)}
+        >
           Симулятор
         </button>
-        <button value="Открытый мир" onClick={(e) => setSearch(e.target.value)}>
+        <button
+          value="Открытый мир"
+          onClick={(e) => {
+            setSearch(e.target.value);
+            handleButtonClick(10);
+          }}
+          style={getButtonStyles(10)}
+        >
           Открытый мир
         </button>
       </div>

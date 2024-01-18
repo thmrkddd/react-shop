@@ -57,8 +57,14 @@
 }
 .header__avatar {
   display: flex;
-  align-items: center;
   flex-direction: column;
+  justify-content: space-around;
+}
+.header__avatar > button {
+  padding: 5px 10px;
+  border: none;
+  background: none;
+  color: white;
 }
 .header__avatar > p {
   margin-left: 10px;
