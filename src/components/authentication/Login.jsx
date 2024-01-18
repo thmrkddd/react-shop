@@ -3,24 +3,25 @@ import "./Login.css";
 import { useAuth } from "../../contexts/AuthContext";
 import { useNavigate } from "react-router-dom";
 const Login = () => {
-  const { user, login, authWithGoogle } = useAuth();
+  const { login } = useAuth();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [error, setError] = useState("");
+  const [error, isError] = useState(false);
   const navigate = useNavigate();
   const handleLoginSubmit = async () => {
-    try {
+    if (email || password) {
       await login(email, password);
-    } catch (error) {
-      setError(error);
+      navigate("/");
+    } else {
+      return isError(true);
     }
-    navigate("/");
   };
   return (
     <>
       {" "}
-      <form className="login__form">
+      <div className="login__form">
         <h1>Авторизация</h1>
+        {error ? <p style={{ color: "red" }}>Ошибка, заполните поля!</p> : null}
         <input
           type="email"
           placeholder="Введите почту"
@@ -31,14 +32,18 @@ const Login = () => {
           placeholder="Введите пароль"
           onChange={(e) => setPassword(e.target.value)}
         />
-        <button onClick={handleLoginSubmit}>Зарегистрироваться</button>
-        <button onClick={() => authWithGoogle()}>Продолжить с Google</button>
+        <div className="login__remember">
+          {" "}
+          <span>Больше не выходить из системы</span>
+          <input type="checkbox" />
+        </div>
+        <button onClick={() => handleLoginSubmit()}>Авторизоваться</button>
         <div className="login__tologin">
           {" "}
           <span>Нет аккаунта?</span>
-          <a href="/register">Зарегистрироваться</a>
+          <a onClick={() => navigate("/register")}>Зарегистрироваться</a>
         </div>
-      </form>
+      </div>
     </>
   );
 };

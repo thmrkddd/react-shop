@@ -8,9 +8,6 @@
   background-color: #1a1919 !important;
   color: white !important;
 }
-.pagination li > div {
-  color: white !important;
-}
 .category__select {
   width: 100%;
   display: flex;
@@ -28,4 +25,8 @@
 .category__select > button:hover {
   background: rgb(255, 102, 51) !important;
   color: white !important;
+}
+.slider__parent p {
+  margin-right: 15px;
+  margin-left: 10px;
 }

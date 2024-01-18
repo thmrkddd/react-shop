@@ -10,7 +10,7 @@
 }
 .login__form > input {
   padding: 10px 35px;
-  margin-top: 15px;
+  margin-top: 5px;
   background-color: #202020;
   border: none;
   text-align: center;
@@ -20,16 +20,30 @@
   color: white !important;
 }
 .login__form > button {
-  padding: 10px 35px;
-  margin-top: 15px;
+  padding: 10px 15px;
+  margin-top: 5px;
   background-color: #70c05b;
   border: none;
   color: white;
+}
+.login__remember {
+  display: flex;
+  margin-top: 5px;
+}
+.login__remember > input {
+  width: 20px;
+}
+.login__remember > a {
+  color: rgb(14, 86, 173) !important;
 }
 span {
   color: white;
   margin-right: 5px;
 }
-.login__remember > a {
+.login__tologin {
+  margin-top: 5px;
+}
+.login__tologin > a {
   color: rgb(14, 86, 173) !important;
+  cursor: pointer;
 }

@@ -59,8 +59,9 @@
   display: flex;
   flex-direction: column;
   justify-content: space-around;
+  width: 200px;
 }
-.header__avatar > button {
+.header__avatar button {
   padding: 5px 10px;
   border: none;
   background: none;
@@ -72,4 +73,9 @@
 .header__avatar > img {
   width: 40px;
   border-radius: 50%;
+}
+.header__avatar-image {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }

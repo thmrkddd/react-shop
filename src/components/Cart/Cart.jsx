@@ -2,15 +2,19 @@ import React, { useContext, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { cartContext } from "../../contexts/cartContext";
 import "./cart.css";
+import { useAuth } from "../../contexts/AuthContext";
 
 const Cart = ({ item }) => {
   const navigate = useNavigate();
-
   const { getCart, cart, deleteFromCart, changeCount } =
     useContext(cartContext);
+  const { user } = useAuth();
   useEffect(() => {
     getCart();
   }, []);
+  const checkUser = () => {
+    user ? navigate("/payment") : navigate("/login");
+  };
   return cart ? (
     <div>
       <div className="container">
@@ -146,10 +150,7 @@ const Cart = ({ item }) => {
                     бонусов
                   </span>
                 </span>
-                <button
-                  onClick={() => navigate("/payment")}
-                  className="pay__btn"
-                >
+                <button onClick={() => checkUser()} className="pay__btn">
                   <p>Оформить заказ</p>
                 </button>
               </div>
