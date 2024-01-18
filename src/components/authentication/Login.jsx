@@ -24,7 +24,7 @@ const Login = () => {
         {error ? <p style={{ color: "red" }}>Ошибка, заполните поля!</p> : null}
         <input
           type="email"
-          placeholder="Введите почту"
+          placeholder="Введите логин"
           onChange={(e) => setEmail(e.target.value)}
         />
         <input
