@@ -5,7 +5,6 @@ import { useAuth } from "../../contexts/AuthContext";
 import { useComment } from "../../contexts/CommentsContext";
 import { Avatar, Tooltip } from "@mui/material";
 import { ADMIN_USERS } from "../helpers/const";
-
 const Comments = () => {
   const { user } = useAuth();
   const { createComments, getComments, deleteComments, comment } = useComment();
