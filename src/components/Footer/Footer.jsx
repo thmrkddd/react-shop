@@ -21,7 +21,6 @@ const Footer = () => {
               <div className="footer__text">
                 <p onClick={() => navigate("/about")}>О компании</p>
                 <p onClick={() => navigate("/contacts")}>Контакты</p>
-                <p onClick={() => navigate("/vakansi")}>Вакансии</p>
                 <p onClick={() => navigate("/testi")}>Отзывы</p>
               </div>
             </div>

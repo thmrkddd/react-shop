@@ -4,7 +4,10 @@ import "./contacts.css";
 const Contacts = () => {
   return (
     <div>
-      <div className="container"></div>
+      <div>
+        {" "}
+        <h1>Страница контактов, тут пусто</h1>
+      </div>
     </div>
   );
 };

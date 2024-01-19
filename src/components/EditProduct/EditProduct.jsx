@@ -1,7 +1,7 @@
 import React, { useContext, useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
-import "./edit.css";
 import { productsContext } from "../../contexts/productsContext";
+import "./edit.css";
 
 const EditProduct = () => {
   const { getOneProduct, oneProduct, updateProduct, getProducts } =
