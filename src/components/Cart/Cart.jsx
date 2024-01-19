@@ -4,7 +4,7 @@ import { cartContext } from "../../contexts/cartContext";
 import "./cart.css";
 import { useAuth } from "../../contexts/AuthContext";
 
-const Cart = ({ item }) => {
+const Cart = () => {
   const navigate = useNavigate();
   const { getCart, cart, deleteFromCart, changeCount } =
     useContext(cartContext);
@@ -19,7 +19,9 @@ const Cart = ({ item }) => {
     <div>
       <div className="container">
         <div className="path">
-          <p onClick={() => navigate("/")}>Главная</p>
+          <p onClick={() => navigate("/")} style={{ cursor: "pointer" }}>
+            Главная
+          </p>
           <svg
             width="24"
             height="24"
@@ -34,7 +36,7 @@ const Cart = ({ item }) => {
               fill="#414141"
             />
           </svg>
-          <p>Корзина</p>
+          <p style={{ cursor: "pointer" }}>Корзина</p>
         </div>
         <div className="cart">
           <h2>Корзина</h2>

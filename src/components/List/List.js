@@ -4,6 +4,7 @@ import { productsContext } from "../../contexts/productsContext";
 import { useSearchParams } from "react-router-dom";
 import { Pagination, Slider } from "@mui/material";
 import "./List.css";
+import { categories } from "../helpers/const";
 const List = () => {
   const { getProducts, pages, products, deleteProduct } =
     useContext(productsContext);
@@ -13,6 +14,7 @@ const List = () => {
   );
   const [price, setPrice] = useState([0, 10000]);
   const [searchParam, setSearchParam] = useSearchParams();
+  const [isActive, setIsActive] = useState(false);
   const [search, setSearch] = useState(
     searchParam.get("q") ? searchParam.get("q") : ""
   );
@@ -24,22 +26,27 @@ const List = () => {
       q: search,
     });
   }, [search]);
+
   useEffect(() => {
-    setSearchParams({
+    const newSearchParams = {
       _page: currentPage,
       _limit: 8,
       price_gte: price[0],
       price_lte: price[1],
-    });
-  }, [currentPage, price]);
-
+    };
+    if (isActive) {
+      newSearchParams.category = categories[isActive - 1];
+    }
+    setSearchParams(newSearchParams);
+  }, [currentPage, price, isActive, categories]);
   useEffect(() => {
     getProducts();
   }, [searchParams]);
-  const [isActive, setIsActive] = useState(false);
-  const handleButtonClick = (buttonNumber) => {
-    setIsActive(buttonNumber);
-  };
+  function handleButtonClick(buttonNumber) {
+    setIsActive((prev) =>
+      prev === buttonNumber ? setSearch("") : buttonNumber
+    );
+  }
   function getButtonStyles(buttonNumber) {
     return {
       background: isActive === buttonNumber ? "rgb(255, 102, 51)" : "none",

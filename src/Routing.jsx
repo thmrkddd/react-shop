@@ -11,24 +11,31 @@ import Payment from "./components/Payment/Payment";
 import Fav from "./components/Fav/Fav";
 import Register from "./components/authentication/Register";
 import Login from "./components/authentication/Login";
+import { ProtectedRoutes } from "./components/helpers/functions";
 
 const PUBLIC_ROUTES = [
   { link: "/", element: <Main />, id: 1 },
   { link: "/about", element: <About />, id: 2 },
   { link: "/contacts", element: <Contacts />, id: 3 },
-  { link: "/add", element: <AddProduct />, id: 4 },
-  { link: "/edit/:id", element: <EditProduct />, id: 5 },
-  { link: "/details/:id", element: <Details />, id: 6 },
-  { link: "/cart", element: <Cart />, id: 7 },
-  { link: "/payment", element: <Payment />, id: 8 },
-  { link: "/favourite", element: <Fav />, id: 9 },
-  { link: "/register", element: <Register />, id: 10 },
-  { link: "/login", element: <Login />, id: 11 },
+  { link: "/details/:id", element: <Details />, id: 4 },
+  { link: "/cart", element: <Cart />, id: 5 },
+  { link: "/payment", element: <Payment />, id: 6 },
+  { link: "/favourite", element: <Fav />, id: 7 },
+  { link: "/register", element: <Register />, id: 8 },
+  { link: "/login", element: <Login />, id: 9 },
 ];
-const ADMIN_ROUTES = [{}];
+const ADMIN_ROUTES = [
+  { link: "/edit/:id", element: <EditProduct />, id: 10 },
+  { link: "/add", element: <AddProduct />, id: 11 },
+];
 const Routing = () => {
   return (
     <Routes>
+      <Route element={<ProtectedRoutes />}>
+        {ADMIN_ROUTES.map((elem) => (
+          <Route path={elem.link} element={elem.element} key={elem.id} />
+        ))}
+      </Route>
       {PUBLIC_ROUTES.map((elem) => (
         <Route path={elem.link} element={elem.element} key={elem.id} />
       ))}
