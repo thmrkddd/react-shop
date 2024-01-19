@@ -1,3 +1,11 @@
+.path {
+  margin-top: 24px;
+  display: flex;
+  align-items: center;
+}
+.path > svg {
+  margin: 0 16px 0 16px;
+}
 .login__form {
   width: 100%;
   display: flex;

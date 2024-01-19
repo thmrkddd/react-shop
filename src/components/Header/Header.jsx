@@ -7,9 +7,11 @@ import { useNavigate, useSearchParams } from "react-router-dom";
 import { Avatar, Badge, Tooltip } from "@mui/material";
 import { cartContext } from "../../contexts/cartContext";
 import { useAuth } from "../../contexts/AuthContext";
+import { favContext } from "../../contexts/favContext";
 
 const Header = () => {
   const { count } = useContext(cartContext);
+  const { count2 } = useContext(favContext);
   const { user, logOut } = useAuth();
   const [searchParam, setSearchParam] = useSearchParams();
   const [search, setSearch] = useState();
@@ -47,17 +49,12 @@ const Header = () => {
             <img src={Search} alt="search" />
           </div>
           <div onClick={() => navigate("/favourite")} className="header__ftrs">
+            <Badge badgeContent={count2} color="error"></Badge>
             <img src={Favourite} alt="favorite" width="25px" />
             <p>Избранное</p>
           </div>
           <div onClick={() => navigate("/cart")} className="header__ftrs">
-            <Badge
-              style={{
-                padding: "0 0 5px 25px",
-              }}
-              badgeContent={count}
-              color="error"
-            ></Badge>
+            <Badge badgeContent={count} color="error"></Badge>
             <img src={Cart} alt="cart" width="25px" />
             <p>Корзина</p>
           </div>{" "}
@@ -80,7 +77,7 @@ const Header = () => {
                     style={{ marginTop: "-6px" }}
                     onClick={() => handleLogOut()}
                   >
-                    Log Out
+                    Выйти
                   </button>
                 ) : null}
               </div>

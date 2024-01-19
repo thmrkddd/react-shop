@@ -8,9 +8,11 @@ import Immortals from "../../img/33immortals.png";
 import Spiderman from "../../img/spiderman.jpg";
 import VisaCard from "../../img/symbols.png";
 import Gift from "../../img/gift-box-with-a-bow.png";
+import { ADMIN_USERS } from "../helpers/const";
+import { useAuth } from "../../contexts/AuthContext";
 const Main = () => {
   const navigate = useNavigate();
-
+  const { user } = useAuth();
   return (
     <div className="main">
       <div className="background">
@@ -20,7 +22,15 @@ const Main = () => {
       </div>
       <div className="container add">
         <h2>Игры</h2>
-        <h4 onClick={() => navigate("/add")}>Добавить игру</h4>
+        {ADMIN_USERS.map((elem, index) =>
+          user && elem.email === user.email ? (
+            <h4 key={index} onClick={() => navigate("/add")}>
+              Добавить игру
+            </h4>
+          ) : (
+            ""
+          )
+        )}
       </div>
       <div>
         <List />
