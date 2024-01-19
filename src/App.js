@@ -7,19 +7,22 @@ import ProductContextProvider from "./contexts/productsContext";
 import CartContextProvider from "./contexts/cartContext";
 import FavContextProvider from "./contexts/favContext";
 import AuthContextProvider from "./contexts/AuthContext";
+import CommentContext from "./contexts/CommentsContext";
 const App = () => {
   return (
     <Router>
       <AuthContextProvider>
-        <FavContextProvider>
-          <CartContextProvider>
-            <ProductContextProvider>
-              <Header />
-              <Routing />
-              <Footer />
-            </ProductContextProvider>
-          </CartContextProvider>
-        </FavContextProvider>
+        <CommentContext>
+          <FavContextProvider>
+            <CartContextProvider>
+              <ProductContextProvider>
+                <Header />
+                <Routing />
+                <Footer />
+              </ProductContextProvider>
+            </CartContextProvider>
+          </FavContextProvider>
+        </CommentContext>
       </AuthContextProvider>
     </Router>
   );

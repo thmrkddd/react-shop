@@ -3,8 +3,8 @@ import { productsContext } from "../../contexts/productsContext";
 import { useNavigate } from "react-router-dom";
 import "./add.css";
 const AddProduct = () => {
-  const { createProduct } = useContext(productsContext);
   const navigate = useNavigate();
+  const { createProduct } = useContext(productsContext);
   const [image, setImage] = useState("");
   const [title, setTitle] = useState("");
   const [price, setPrice] = useState("");

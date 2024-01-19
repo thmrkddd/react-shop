@@ -12,7 +12,7 @@ export const useAuth = () => useContext(authContext);
 const INIT_STATE = {
   user: null,
 };
-const reducer = (state, action) => {
+const reducer = (state = INIT_STATE, action) => {
   switch (action.type) {
     case ACTIONS_USER.CHECK_USER:
       return { ...state, user: action.payload };
