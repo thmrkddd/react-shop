@@ -12,6 +12,7 @@ import Fav from "./components/Fav/Fav";
 import Register from "./components/authentication/Register";
 import Login from "./components/authentication/Login";
 import { ProtectedRoutes } from "./components/helpers/functions";
+import Comments from "./components/Comments/Comments";
 
 const PUBLIC_ROUTES = [
   { link: "/", element: <Main />, id: 1 },
@@ -23,6 +24,7 @@ const PUBLIC_ROUTES = [
   { link: "/favourite", element: <Fav />, id: 7 },
   { link: "/register", element: <Register />, id: 8 },
   { link: "/login", element: <Login />, id: 9 },
+  { link: "/testi", element: <Comments />, id: 10 },
 ];
 const ADMIN_ROUTES = [
   { link: "/edit/:id", element: <EditProduct />, id: 10 },
